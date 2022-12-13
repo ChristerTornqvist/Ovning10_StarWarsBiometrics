@@ -1,17 +1,18 @@
-let fullUrl = 'https://www.swapi.tech/api/people/?name=chewbacca';
-let partialUrl = '”https://www.swapi.tech/api/people/?name=”';
+const characterInput = document.querySelector('#characterInput');
+const btnNameImport = document.querySelector('#btnNameImport');
+const characterOutput = document.querySelector('#characterOutput');
 
-let btnNameImport = document.querySelector('#btnNameImport');
-let characterOutput = document.querySelector('#characterOutput');
+let partialUri = 'https://www.swapi.tech/api/people/?name=';
 
 const getBiometrics = () =>
 {
-    /*Skriv din kod här*/
+    let uriEnding = characterInput.value;
+    fullUri = partialUri+uriEnding
+    console.log(fullUri);
 
-    fetch(fullUrl,
+    fetch(fullUri,
     {
-        method: 'GET',
-        headers:
+        method: 'GET', headers:
         {
             'Accept': 'application/json'
         }
@@ -27,16 +28,24 @@ const getBiometrics = () =>
     .then(data => 
     {
             console.log(data);
-        characterOutput.innerHTML = 'Biometric data:';
+        // characterOutput.innerHTML = 'Biometric data:';
             console.log(data.result[0].properties.height)
             console.log(data.result[0].properties.mass)
             console.log(data.result[0].properties.hair_color)
             console.log(data.result[0].properties.gender)
-        characterOutput.innerHTML += `
+        // characterOutput.innerHTML += `
+        // Height: ${data.result[0].properties.height}
+        // Mass: ${data.result[0].properties.mass}
+        // Hair: ${data.result[0].properties.hair_color}
+        // Gender: ${data.result[0].properties.gender}`
+
+        let characterBio = `Biometric data: 
         Height: ${data.result[0].properties.height}
         Mass: ${data.result[0].properties.mass}
         Hair: ${data.result[0].properties.hair_color}
-        Gender: ${data.result[0].properties.gender}`
+        Gender: ${data.result[0].properties.gender}`;
+
+        characterOutput.innerHTML = characterBio;
     })
     .catch(err => console.log('Error: ' + err))
 }
