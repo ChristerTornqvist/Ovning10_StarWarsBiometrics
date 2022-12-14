@@ -8,8 +8,6 @@ const getBiometrics = () =>
 {
     let uriEnding = characterInput.value;
     fullUri = partialUri+uriEnding
-    console.log(fullUri);
-
     fetch(fullUri,
     {
         method: 'GET', headers:
@@ -27,18 +25,6 @@ const getBiometrics = () =>
     })
     .then(data => 
     {
-            console.log(data);
-        // characterOutput.innerHTML = 'Biometric data:';
-            console.log(data.result[0].properties.height)
-            console.log(data.result[0].properties.mass)
-            console.log(data.result[0].properties.hair_color)
-            console.log(data.result[0].properties.gender)
-        // characterOutput.innerHTML += `
-        // Height: ${data.result[0].properties.height}
-        // Mass: ${data.result[0].properties.mass}
-        // Hair: ${data.result[0].properties.hair_color}
-        // Gender: ${data.result[0].properties.gender}`
-
         let characterBio = `Biometric data: 
         Height: ${data.result[0].properties.height}
         Mass: ${data.result[0].properties.mass}
