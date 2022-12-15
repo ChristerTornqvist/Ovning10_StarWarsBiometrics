@@ -1,8 +1,10 @@
 const characterInput = document.querySelector('#characterInput');
 const btnNameImport = document.querySelector('#btnNameImport');
+const btnSideChange = document.querySelector('#btnSideChange');
 const characterOutput = document.querySelector('#characterOutput');
 
 let partialUri = 'https://www.swapi.tech/api/people/?name=';
+let darkSide = true;
 
 const getBiometrics = () =>
 {
@@ -36,4 +38,14 @@ const getBiometrics = () =>
     .catch(err => console.log('Error: ' + err))
 }
 
+const changeSide = () =>
+{
+    headerID.classList.toggle('headerLight');
+    bodyID.classList.toggle('bodyLight');
+    footerID.classList.toggle('footerLight');
+    btnNameImport.classList.toggle('buttonLight');
+    btnSideChange.classList.toggle('buttonLight');
+}
+
 btnNameImport.addEventListener('click', getBiometrics);
+btnSideChange.addEventListener('click', changeSide);

@@ -14,6 +14,10 @@ header {
     background-color: black;
 }
 
+.headerLight {
+    background-image: url('images/Leia422x346.jpg');
+}
+
 header p {
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-weight: bold;
@@ -30,24 +34,30 @@ body {
     background-color: black;
 }
 
+.bodyLight {
+    background-color: #fbf9f9;
+}
+
 .container {
     margin-top: 50px;
     padding-block: 8%;
-    background-image: url('images/SW.png');
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    background-color:#fdfdfd;
     color: black;
     max-width: 450px;
 }
 
-#btnNameImport {
+.btnNameImport .btnSideChange {
     background-color: black;
 }
 
-#btnNameImport:hover {
+.btnNameImport .btnSideChange:hover {
     background-color: #360b0b;
+}
+
+.buttonLight {
+    background-color: gray;
 }
 
 div #characterOutput {
@@ -56,7 +66,7 @@ div #characterOutput {
     margin-left: 35%;
     font-weight: bold;
     text-align: center;
-    color: burlywood;
+    color: white;
     background-color: #60111f99;
 }
 
@@ -68,6 +78,12 @@ footer {
     margin-top: 20px;
     background-color: black;
     color: burlywood;
+}
+
+.footerLight {
+    background-image: url('images/Han188x172.jpg');
+    background-color: #fbf9f9;
+    color: black;
 }
 
 footer p {
