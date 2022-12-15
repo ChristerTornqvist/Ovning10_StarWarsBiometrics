@@ -61,15 +61,19 @@ div #characterOutput {
 }
 
 footer {
-    height: 70px;
-    margin-top: 70px;
+    height: 160px;
+    background-image: url('images/STH179x176.png');
+    background-repeat: no-repeat;
+    background-position: left;
+    margin-top: 20px;
     background-color: black;
     color: burlywood;
 }
 
 footer p {
-    margin-left: 8%;
+    margin-right: 4%;
     font-family: 'Courier New', Courier, monospace;
     font-size: large;
     font-weight: bold;
+    text-align: right;
 }
